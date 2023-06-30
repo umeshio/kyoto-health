@@ -1,0 +1,163 @@
+/* ****************************************************************************************************
+
+  # row-card
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+/* ======================================================================
+
+  ## li.p-row-card
+
+====================================================================== */
+.p-row-card {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card {
+    flex-direction: row;
+  }
+}
+
+/* ======================================================================
+
+  ## head
+
+====================================================================== */
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__head {
+    height: 16vw;
+    aspect-ratio: 22/17;
+  }
+}
+
+/* ======================================================================
+
+  ## image
+
+====================================================================== */
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__head-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ======================================================================
+
+  ## body
+
+====================================================================== */
+.p-row-card__body {
+  display: block;
+  padding-right: 7%;
+  padding-left: 7%;
+}
+
+.p-row-card__body {
+  position: relative;
+  background-color: global.$color-green-white;
+  padding-top: 1rem;
+  padding-bottom: 1.8rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__body {
+    padding-right: 7%;
+    padding-left: 7%;
+    padding-top: 1.8rem;
+    padding-bottom: 2.2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.p-row-card__body::after {
+  content : "" ;
+  display : block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: .9rem solid global.$color-green;
+  border-bottom: .9rem solid global.$color-green;
+  border-left: .9rem solid transparent;
+  border-top: .9rem solid transparent;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__body::after {
+  }
+}
+
+/* ======================================================================
+
+  ## number
+
+====================================================================== */
+.p-row-card__number {
+  font-size: global.$font-size-sm;
+  line-height: 1.4;
+  font-weight: bold;
+  color: global.$color-blue;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__number {
+    font-size: 1.4rem;
+  }
+}
+
+.p-row-card__number span.strong {
+  font-size: 1.6rem;
+  margin-left: .5rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__number span.strong {
+    font-size: 2.2rem;
+    margin-left: .8rem;
+  }
+}
+
+/* ======================================================================
+
+  ## sub-title
+
+====================================================================== */
+.p-row-card__sub-title {
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: global.$color-txt-dark;
+  margin-top: .9rem;
+}
+
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__sub-title {
+    font-size: 1.8rem;
+    margin-top: 1.2rem
+  }
+}
+
+/* ======================================================================
+
+  ## title
+
+====================================================================== */
+.p-row-card__title {
+  @include global.font-size-l();
+  line-height: 1.5;
+  font-weight: global.$font-weight-bold;
+  color: global.$color-txt-dark;
+  margin-top: .6rem;
+}
+
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-row-card__title {
+  }
+}

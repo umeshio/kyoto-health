@@ -1,0 +1,55 @@
+/* ****************************************************************************************************
+
+  # title
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.p-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: global.$color-green;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-title {
+    font-size: 3.6rem;
+  }
+}
+
+.p-title__ruby {
+  @include global.font-size-m();
+  font-weight: bold;
+  color: global.$color-txt-dark;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-title__ruby {
+    margin-top: .8rem;
+  }
+}
+
+/* ======================================================================
+
+  ## TOP recruit タイトル
+
+====================================================================== */
+.p-title--white {
+  color: global.$color-green;
+  font-weight: bold;
+  font-size: 2.2rem;
+  background-color: global.$color-white;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-title--white {
+    font-size: 3.8rem;
+  }
+}

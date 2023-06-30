@@ -1,0 +1,55 @@
+/* ****************************************************************************************************
+
+  # container
+  - layout
+  - 横幅などの指定
+
+**************************************************************************************************** */
+// l-section > l-container
+@use '../foundation/tool/global';
+
+.l-container {
+  z-index: 1;
+  position: relative;
+  @include global.content-width-padding();
+}
+
+/* full
+---------------------------------------------------------------------- */
+.l-container.l-container--full {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* pcサイズからfull
+---------------------------------------------------------------------- */
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-container.l-container--full_from-m {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/*・左余白（右詰め）
+---------------------------------------------------------------------- */
+.l-container.l-container--left {
+  @include global.content-width-left-padding();
+}
+
+/*・右余白(左詰め)
+---------------------------------------------------------------------- */
+.l-container.l-container--right {
+  @include global.content-width-right-padding();
+}
+
+/*・余白大（コンテンツ幅狭）
+---------------------------------------------------------------------- */
+.l-container.l-container--narrow {
+  @include global.content-width-narrow-padding();
+}
+
+/*・パンくずリスト
+---------------------------------------------------------------------- */
+.l-container.l-container--bredcrumb{
+  padding: 0 global.$content-side-gutter 0;
+}

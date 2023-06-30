@@ -1,0 +1,122 @@
+/* ****************************************************************************************************
+
+  # bg
+  - theme
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.t-bg-skelton {
+  background-color: transparent !important;
+}
+
+.t-bg-white {
+  background-color: global.$color-white;
+}
+
+.t-bg-gradation {
+  background: global.$color-green-light;
+  background: linear-gradient(to right, global.$color-green-light, global.$color-blue-light);
+}
+
+.t-bg-blue-white {
+  background-color: global.$color-blue-white;
+}
+
+.t-bg-green-white {
+  background-color: global.$color-green-white;
+}
+
+.t-bg-gray-light {
+  background-color: #f9f9f9;
+}
+
+// TOPページの最上部セクション
+.t-bg-first_section {
+  &::before {
+    content : "" ;
+    display : block;
+    position : absolute;
+    top: 0;
+    left: 0;
+    width: 62%;
+    aspect-ratio: 25/12;
+    background-color: global.$color-green-white;
+    clip-path: polygon(0 0%, 100% 0, 0 100%, 0% 100%);
+  }
+}
+
+// TOPページのdevelopmentセクション
+.t-bg-development {
+  &::after {
+    z-index: -1;
+    content : "" ;
+    display : block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: global.$color-gradation;
+    opacity: .4;
+  } 
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .t-bg-development {
+    &::after {
+      height: 80%;
+    } 
+  }
+}
+
+// TOPページのエンジニア募集セクション
+.t-bg-recruitment {
+  background-color: rgba($color: #9bcbdb, $alpha: .5);
+  &::before {
+    z-index: -1;
+    content : "" ;
+    display : block;
+    position : absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    aspect-ratio: 25/12;
+    background-color: global.$color-blue-light;
+    opacity: .2;
+    clip-path: polygon(0 0%, 100% 0, 0 100%, 0% 100%);
+  }
+  &::after {
+    content : "" ;
+    display : block;
+    position : absolute;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    aspect-ratio: 25/12;
+    background-color: global.$color-blue-light;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0% 100%);
+    opacity: .2;
+    z-index: -1;
+  }
+}
+
+// recruitementページのキャリア採用セクション
+.t-bg-career {
+  background-image: linear-gradient(
+    to bottom,
+    global.$color-white 0%,
+    global.$color-white 20%,
+    global.$color-green-white 20%,
+    global.$color-green-white 100%,
+  );
+}
+// recruitementページの新卒採用セクション
+.t-bg-new_graduate {
+  background-image: linear-gradient(
+    to bottom,
+    global.$color-white 0%,
+    global.$color-white 20%,
+    global.$color-blue-white 20%,
+    global.$color-blue-white 100%,
+  );
+}

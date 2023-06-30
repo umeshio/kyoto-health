@@ -1,0 +1,151 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "recruitment";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "sub";
+
+block content
+
+  //- **********************************************************************
+  //- パンくずリスト
+  //- **********************************************************************
+  section.l-section.l-section--gap_0.t-bg-blue-white
+    div.l-container.l-container--bredcrumb
+      ul.p-breadcrumbs
+        li.p-breadcrumbs__divider
+          a.p-breadcrumbs__item(href=`${relativePath}`) TOP
+        li.p-breadcrumbs__try-divider
+        li.p-breadcrumbs__divider
+          p.p-breadcrumbs__item 募集要項
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-kv
+    div.l-kv__container
+      div.l-kv__image.l-kv__image--recruitment
+        img.js-ofi(src=`${relativePath}assets/img/kv/recruitment-kv-image.webp` alt="")
+    div.p-kv-title
+      h1.p-kv-title__item Recruitment
+      p.p-kv-title__item-sub 募集要項
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- Intro 
+  //- **********************************************************************
+  section.l-section
+    div.l-container
+      div.c-sentence.c-sentence--page-top
+        p.c-sentence__item 医療分野における革新的なシステムの開発を行っている医療系システム会社です。<br>
+          | 医療と技術の融合に興味を持ち、社会に大きなインパクトを与える仕事に挑戦したい方、ご応募をお待ちしております。
+      
+      div.p-anchor.u-mt8.u-sp-mt3
+        div.p-btn.p-btn--green.u-w-full
+          a.p-btn__inner(href=`#career`)
+            span.p-btn__txt キャリア採用
+        div.p-btn.p-btn--blue.u-w-full
+          a.p-btn__inner(href=`#new-graduate`)
+            span.p-btn__txt 新卒採用
+
+  //- **********************************************************************
+  //- キャリア採用
+  //- **********************************************************************
+  section.l-section.t-bg-career#career
+    div.l-container
+      h2.p-title.u-txt-align-center Career
+        span.p-title__ruby キャリア採用
+    div.l-container.l-container--full
+      div.p-recruitment-header.u-mt5.u-sp-mt3
+        img.p-recruitment-header__career-img(src=`${relativePath}assets/img/page/recruitment/career-image.webp` alt="")
+    div.p-recruitment-inner
+      h2.p-recruitment-inner__title RECRUITMENT /&nbsp;
+        span.p-recruitment-inner__title-num &nbsp;01
+        span.p-recruitment-inner__title-strong キャリア採用 募集要項
+      
+      dl.p-dl-list.u-mt5.u-sp-mt3
+        dt.p-dl-list__dt 募集職種・<br class="u-hide-mq-max-md">応募要件
+        dd.p-dl-list__dd
+          ul.p-occupation-list
+            li.p-occupation-list__divider
+              p.p-occupation-list__title システムエンジニア・プログラマー
+              p.p-occupation-list__text プログラミング経験(VisualC++/C#、VisualBasic等)<br>
+                | または、システム開発(要件定義、基本設計、詳細設計)経験、Webサービスシステム開発経験者<br>
+                | DB構築経験、最新技術を意欲的に学んでいける方
+            li.p-occupation-list__divider
+              p.p-occupation-list__title クラウドエンジニア・インフラエンジニア
+              p.p-occupation-list__text クラウド上でのシステム設計・構築・運用等の経験がある方、ネットワークインフラ、サーバなどの設計経験がある方。
+            li.p-occupation-list__divider
+              p.p-occupation-list__title システムエンジニア(医療系ビッグデータ分析システム)
+              p.p-occupation-list__text ・健診、医療、介護のいずれかのシステムの導入・運用経験があること<br>
+                | ・ビッグデータに関するシステム開発の経験があること
+        dt.p-dl-list__dt 勤務地
+        dd.p-dl-list__dd 宇治
+        dt.p-dl-list__dt 勤務時間
+        dd.p-dl-list__dd 8:30-17:30
+        dt.p-dl-list__dt 給与
+        dd.p-dl-list__dd 調整中
+        dt.p-dl-list__dt 昇給・賞与
+        dd.p-dl-list__dd 調整中
+        dt.p-dl-list__dt 加入保険
+        dd.p-dl-list__dd 健康・厚生・雇用・労災
+        dt.p-dl-list__dt 福利厚生
+        dd.p-dl-list__dd 確定拠出年金（401K）制度
+        dt.p-dl-list__dt 休日
+        dd.p-dl-list__dd 完全週休2日制（土曜日・日曜日）<br>休日祝祭日・夏季・年末年始・冬季・お盆<br>（2023年度年間休日130日）
+        dt.p-dl-list__dt 休暇
+        dd.p-dl-list__dd 年次有給休暇（初年度１０日、２年目以降＋１～２日、最高保有日数２０日）
+        dt.p-dl-list__dt 休業制度
+        dd.p-dl-list__dd 育児休業、介護休業
+    
+    div.p-btn.p-btn--light-blue.u-mt6.u-sp-mt3.u-w30
+      a.p-btn__inner(href=`${relativePath}entry`)
+        span.p-btn__txt 応募フォームへ
+      
+  //- **********************************************************************
+  //- 新卒採用
+  //- **********************************************************************
+  section.l-section.l-section--gap_top-l.t-bg-new_graduate#new-graduate
+    div.l-container
+      h2.p-title.u-txt-align-center New graduate
+        span.p-title__ruby 新卒採用
+    div.l-container.l-container--full
+      div.p-recruitment-header.u-mt5.u-sp-mt3
+        img.p-recruitment-header__career-img(src=`${relativePath}assets/img/page/recruitment/new-graduate-image.webp` alt="")
+    div.p-recruitment-inner
+      h2.p-recruitment-inner__title RECRUITMENT /&nbsp;
+        span.p-recruitment-inner__title-num &nbsp;02
+        span.p-recruitment-inner__title-strong 新卒採用 募集要項
+      
+      dl.p-dl-list.u-mt5.u-sp-mt3
+        dt.p-dl-list__dt 募集職種
+        dd.p-dl-list__dd システムエンジニア・プログラマー
+        dt.p-dl-list__dt 募集学部
+        dd.p-dl-list__dd 全学部
+        dt.p-dl-list__dt 勤務地
+        dd.p-dl-list__dd 宇治
+        dt.p-dl-list__dt 勤務時間
+        dd.p-dl-list__dd 8:30-17:30
+        dt.p-dl-list__dt 給与
+        dd.p-dl-list__dd 調整中
+        dt.p-dl-list__dt 昇給・賞与
+        dd.p-dl-list__dd 調整中
+        dt.p-dl-list__dt 加入保険
+        dd.p-dl-list__dd 健康・厚生・雇用・労災
+        dt.p-dl-list__dt 福利厚生
+        dd.p-dl-list__dd 確定拠出年金（401K）制度
+        dt.p-dl-list__dt 休日
+        dd.p-dl-list__dd 完全週休2日制（土曜日・日曜日）<br>休日祝祭日・夏季・年末年始・冬季・お盆<br>（2023年度年間休日130日）
+        dt.p-dl-list__dt 休暇
+        dd.p-dl-list__dd 年次有給休暇（初年度１０日、２年目以降＋１～２日、最高保有日数２０日）
+        dt.p-dl-list__dt 休業制度
+        dd.p-dl-list__dd 育児休業、介護休業
+    
+    div.p-btn.p-btn--light-blue.u-mt6.u-sp-mt3.u-w30
+      a.p-btn__inner(href=`${relativePath}entry`)
+        span.p-btn__txt 応募フォームへ

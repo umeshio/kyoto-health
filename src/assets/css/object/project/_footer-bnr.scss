@@ -1,0 +1,96 @@
+/* ****************************************************************************************************
+
+  # footer-bnr
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+ul.p-footer-bnr {
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	ul.p-footer-bnr {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ======================================================================
+
+  ## li divider
+
+====================================================================== */
+li.p-footer-bnr__divider {
+	position: relative;
+	&::after {
+		content : "" ;
+		display : block;
+		position : absolute;
+		bottom: 0;
+		right: 0;
+		border-right: .9rem solid global.$color-blue;
+		border-bottom: .9rem solid global.$color-blue;
+		border-left: .9rem solid transparent;
+		border-top: .9rem solid transparent;
+	}
+}
+
+/* ======================================================================
+
+  ## a item
+
+====================================================================== */
+.p-footer-bnr__item {
+	position: relative;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 24/11;
+	background-repeat: no-repeat;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-footer-bnr__item {
+		align-items: center;
+	}
+}
+
+.p-footer-bnr__item.p-footer-bnr__item-recruitment {
+	background-image: url(../img/page/top/footer-bnr-recruitment.webp);
+	background-size: auto 130%;
+	background-position: center left;
+}
+.p-footer-bnr__item.p-footer-bnr__item-welfare {
+	background-image: url(../img/page/top/footer-bnr-welfare.webp);
+	background-size: 100% auto;
+	background-position: bottom 25% center;
+}
+.p-footer-bnr__item.p-footer-bnr__item-entry {
+	background-image: url(../img/page/top/footer-bnr-entry.webp);
+	background-size: 100% auto;
+	background-position: center right;
+}
+
+/* ======================================================================
+
+  ## a item::before ホバー効果
+
+====================================================================== */
+.p-footer-bnr__item::before {
+		z-index: -1;
+		content : "" ;
+		display : block;
+		position : absolute;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		transition: all .5s ease;
+		background-image: linear-gradient(
+			to bottom,
+			rgba( global.$color-green-light, .3),
+			rgba( global.$color-blue-light, .3),
+		);
+}
+
+.p-footer-bnr__item:hover::before {
+	opacity: 1;
+}

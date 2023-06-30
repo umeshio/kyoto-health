@@ -1,0 +1,35 @@
+/* ****************************************************************************************************
+
+  # breadcrumbs
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+ul.p-breadcrumbs {
+	padding: .8rem 0;
+	display: flex;
+	justify-content: flex-start;
+	column-gap: 1rem;
+	align-items: center;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	ul.p-breadcrumbs {
+		padding: 1.2rem 0;
+	}	
+}
+
+li.p-breadcrumbs__divider {
+
+}
+
+.p-breadcrumbs__item {
+	color: global.$color-txt-dark;
+}
+
+li.p-breadcrumbs__try-divider {
+	width: 0;
+	height: 0;
+	border-left: 10px solid global.$color-green;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+}

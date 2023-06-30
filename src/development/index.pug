@@ -1,0 +1,106 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "development";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "sub";
+
+block content
+
+  //- **********************************************************************
+  //- パンくずリスト
+  //- **********************************************************************
+  section.l-section.l-section--gap_0.t-bg-blue-white
+    div.l-container.l-container--bredcrumb
+      ul.p-breadcrumbs
+        li.p-breadcrumbs__divider
+          a.p-breadcrumbs__item(href=`${relativePath}`) TOP
+        li.p-breadcrumbs__try-divider
+        li.p-breadcrumbs__divider
+          p.p-breadcrumbs__item 開発実績
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-kv
+    div.l-kv__container
+      div.l-kv__image
+        img.js-ofi(src=`${relativePath}assets/img/kv/development-kv-image.webp` alt="")
+    div.p-kv-title
+      h1.p-kv-title__item Development
+      p.p-kv-title__item-sub 開発実績
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- Intro & Visiton・Mission
+  //- **********************************************************************
+  section.l-section
+    div.l-container
+      div.c-sentence.c-sentence--page-top
+        p.c-sentence__item 私たちは、京都工場保健会を母体としています。これまで、健康診断や健康管理に関するさまざまな機能を提供し、効率的なデータ管理や予約管理、結果報告などを支援するシステムを開発してきました。持続的な健康管理と利便性を追求するために、さらなる技術革新と柔軟なシステム拡張を目指します。
+
+      ul.c-card-grid.u-mt10.u-sp-mt5
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/development/development-card-01.webp`, alt="健康・保健のデジタル革命")
+          div.p-card__body.p-card__body--green
+            p.p-card__number DEVELOPMENT /&nbsp;
+              span.strong &nbsp;01
+            p.p-card__sub-title デジタルが生む健康管理
+            p.p-card__title 総合健診データ<br>管理システム
+            p.p-card__desc 企業などで行われる健康診断のデータを効果的に管理するためのシステムを開発いたしました。
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/development/development-card-02.webp`, alt="オープンイノベーション")
+          div.p-card__body.p-card__body--green
+            p.p-card__number DEVELOPMENT /&nbsp;
+              span.strong &nbsp;02
+            p.p-card__sub-title 24時間対応を可能とする
+            p.p-card__title 健康診断<br>WEB予約システム
+            p.p-card__desc 受診者が簡単にオンラインで健康診断の予約を行うことができるシステムを開発いたしました。
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/development/development-card-03.webp`, alt="信頼される企業に")
+          div.p-card__body.p-card__body--green
+            p.p-card__number DEVELOPMENT /&nbsp;
+              span.strong &nbsp;03
+            p.p-card__sub-title お客様の健康を促進する
+            p.p-card__title データヘルス<br>システム
+            p.p-card__desc 受診者の健康データや医療記録を電子形式で保存し、医療従事者や患者自身が必要な情報にアクセスできるシステムです。
+      
+  //- **********************************************************************
+  //- Results
+  //- **********************************************************************
+  section.l-section.t-border-b
+    div.l-container
+      div.c-grid.c-grid--1-2.c-grid--gapless
+        h2.p-title Results
+          span.p-title__ruby 実績
+        div.t-border-top-blue.t-border-top-green
+          ul.c-list.u-pt3.u-pb3
+            li.c-list__item ・総合健診データ管理システム
+            li.c-list__item ・特定健診管理システム
+            li.c-list__item ・出張健診計画管理システム
+            li.c-list__item ・出張健診データ管理システム
+            li.c-list__item ・施設健診データ管理システム 
+            li.c-list__item ・出張健診計画管理システム
+            li.c-list__item ・主婦巡回健診管理システム
+            li.c-list__item ・ネットワーク健診管理システム
+            li.c-list__item ・ストレスチェック管理システム
+            li.c-list__item ・健康診断結果報告発送管理システム 
+            li.c-list__item ・健康診断 Web予約システム
+            li.c-list__item ・人間ドック予約管理システム
+            li.c-list__item ・データヘルス システム
+            li.c-list__item ・保健指導管理システム
+            li.c-list__item ・契約管理システム
+            li.c-list__item ・一般社団法人全国健康増進協議会 結果報告システム
+            li.c-list__item ・一般社団法人全国健康増進協議会 次期システム開発
+            li.c-list__item ・一般財団法人淳風会 次期システム開発
+            li.c-list__item ・医療法人社団同友会 特殊健康診断システム ライセンス提供
+            li.c-list__item ・全国健康保険協会(協会けんぽ) 資格管理システム
+            li.c-list__item ・事業場要望による各種システムの開発

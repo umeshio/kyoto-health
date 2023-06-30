@@ -1,0 +1,76 @@
+/* ****************************************************************************************************
+
+  # footer
+  - layout
+
+**************************************************************************************************** */
+@use '../foundation/tool/global';
+@use 'sass:math';
+
+.l-footer {
+  position: relative;
+  padding: 5.8rem 0 2.4rem;
+  background-color: global.$color-white;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-footer {
+    padding: math.div(global.$section-gutter-mq-min-md, 1.4) 0 2rem;
+  }
+}
+
+/* ======================================================================
+
+  top
+
+====================================================================== */
+// .l-footer__top {
+// }
+
+/* ======================================================================
+
+  bottom
+
+====================================================================== */
+.l-footer__bottom {
+  margin-top: 2rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-footer__bottom {
+  }
+}
+
+/* ======================================================================
+
+  ## container
+
+====================================================================== */
+.l-footer__container {
+  position: relative;
+  @include global.content-width-padding();
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-footer__container {
+    // width: global.$content-width-mq-min-md;
+  }
+}
+
+/* ### has grid
+---------------------------------------------------------------------- */
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-footer__container.l-footer__container--has_grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+/* ======================================================================
+
+  ## grid
+
+====================================================================== */
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-footer__grid {
+    width: 35%;
+  }
+}

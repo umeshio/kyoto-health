@@ -1,0 +1,29 @@
+/* ****************************************************************************************************
+
+  # grid
+  - component
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.c-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 2rem;
+}
+
+.c-grid.c-grid--gapless {
+	row-gap: 0;
+}
+
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.c-grid.c-grid--1-2 {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.c-grid__col-2 {
+	grid-column-start: 2;
+	}
+}

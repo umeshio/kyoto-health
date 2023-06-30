@@ -1,0 +1,26 @@
+/* ****************************************************************************************************
+
+  # precident-name
+  - component
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+.c-president-name {
+	font-size: 1.6rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.c-president-name {
+		font-size: 1.8rem;
+	}
+}
+
+img.c-president-name__img {
+	width: 9rem;
+	margin-left: 1rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	img.c-president-name__img {
+		width: 13rem;
+		margin-left: 1.6rem;
+	}
+}

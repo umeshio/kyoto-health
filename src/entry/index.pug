@@ -1,0 +1,173 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "entry";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "sub";
+
+block content
+
+  //- **********************************************************************
+  //- パンくずリスト
+  //- **********************************************************************
+  section.l-section.l-section--gap_0.t-bg-blue-white
+    div.l-container.l-container--bredcrumb
+      ul.p-breadcrumbs
+        li.p-breadcrumbs__divider
+          a.p-breadcrumbs__item(href=`${relativePath}`) TOP
+        li.p-breadcrumbs__try-divider
+        li.p-breadcrumbs__divider
+          p.p-breadcrumbs__item 応募フォーム
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-kv.t-bg-gray-light
+    div.l-kv__container
+      div.l-kv__image
+        img.js-ofi(src=`${relativePath}assets/img/kv/entry-kv-image.webp` alt="")
+    div.p-kv-title
+      h1.p-kv-title__item Entry
+      p.p-kv-title__item-sub 募集フォーム
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- Form
+  //- **********************************************************************
+  section.l-section.t-bg-gray-light
+    div.l-container
+      ul.p-entry-step
+        li.p-entry-step__item.current-page ご入力
+        li.p-entry-step__item ご確認
+        li.p-entry-step__item 送信完了
+
+      // {if:$global_errors}
+      <div class="p-form-error">
+        <p class="p-form-error__title">入力内容に誤りがあります。</p>
+        <ul>
+        // {loop:$global_errors}
+        // <li><p>{$global_errors[]}</p></li>
+        // {/loop:$global_errors}
+        </ul>
+      </div>
+      // {/if:$global_errors}
+
+      form(method="post" enctype="multipart/form-data")
+        input(type="hidden" name="csrf_token" value="{$csrf_token}" )
+
+        div.p-form.u-mt5.u-sp-mt3
+          h2.p-recruitment-inner__title ENTRY FORM / 
+            span.p-recruitment-inner__title-strong 応募フォーム
+
+          table.p-form__table.u-mt5.u-sp-mt3
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title 会社名・学校名
+              td.p-form__answer-td
+                input.p-form__input-text(type="text" name="会社名・学校名" value="{$会社名・学校名}"  )
+                input(type="hidden" name="required[]" value="会社名・学校名")
+
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title お名前(漢字)
+              td.p-form__answer-td.p-form__answer-td--name
+                div.p-form__answer-td__name-divider
+                  span.p-form__answer-td__text 姓
+                  input.p-form__input-text(type="text" name="お名前姓" value="{$お名前姓}"  )
+                  input(type="hidden" name="zenkaku_all[]" value="お名前姓")
+                  input(type="hidden" name="required[]" value="お名前姓")
+                div.p-form__answer-td__name-divider
+                  span.p-form__answer-td__text 名
+                  input.p-form__input-text(type="text" name="お名前名" value="{$お名前名}"  )
+                  input(type="hidden" name="zenkaku_all[]" value="お名前名")
+                  input(type="hidden" name="required[]" value="お名前名")
+
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title お名前(ひらがな)
+              td.p-form__answer-td.p-form__answer-td--name
+                div.p-form__answer-td__name-divider
+                  span.p-form__answer-td__text せい
+                  input.p-form__input-text(type="text" name="ふりがな姓" value="{$ふりがな姓}"  )
+                  input(type="hidden" name="hiragana[]" value="ふりがな姓")
+                  input(type="hidden" name="required[]" value="ふりがな姓")
+                div.p-form__answer-td__name-divider
+                  span.p-form__answer-td__text めい
+                  input.p-form__input-text(type="text" name="ふりがな名" value="{$ふりがな名}"  )
+                  input(type="hidden" name="hiragana[]" value="ふりがな名")
+                  input(type="hidden" name="required[]" value="ふりがな名")
+
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title メールアドレス
+              td.p-form__answer-td
+                input.p-form__input-text(type="text" name="メールアドレス" value="{$メールアドレス}"  )
+                input(type="hidden" name="email[]" value="メールアドレス")
+                input(type="hidden" name="required[]" value="メールアドレス")
+
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title メールアドレス(確認用)
+              td.p-form__answer-td
+                input.p-form__input-text(type="text" name="メールアドレス確認用" value="{$メールアドレス確認用}"  )
+                input(type="hidden" name="required[]" value="メールアドレス確認用")
+                input(type="hidden" name="match[]" value="メールアドレス メールアドレス確認用")
+
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title 電話番号(半角)
+              td.p-form__answer-td
+                input.p-form__input-text(type="text" name="電話番号" value="{$電話番号}"  )
+                input(type="hidden" name="num_hyphen[]" value="電話番号")
+                input(type="hidden" name="required[]" value="電話番号")
+            
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title 住所
+              td.p-form__answer-td.p-form__answer-td--addr
+                div.p-form__answer-td__addr-divider
+                  span.p-form__answer-td__text 郵便番号
+                  input.p-form__input-text(type="text" name="郵便番号" value="{$郵便番号}"  )
+                  input(type="hidden" name="num_hyphen[]" value="郵便番号")
+                  input(type="hidden" name="required[]" value="郵便番号")
+                div.p-form__answer-td__addr-divider
+                  span.p-form__answer-td__text 都道府県
+                  input.p-form__input-text(type="text" name="都道府県" value="{$都道府県}"  )
+                  input(type="hidden" name="required[]" value="都道府県")
+                div.p-form__answer-td__addr-divider
+                  span.p-form__answer-td__text 市町村
+                  input.p-form__input-text(type="text" name="市町村" value="{$市町村}"  )
+                  input(type="hidden" name="required[]" value="市町村")
+                div.p-form__answer-td__addr-divider
+                  span.p-form__answer-td__text 町名・番地 / 建物名・部屋番号
+                  input.p-form__input-text.u-mt1(type="text" name="町名番地" value="{$町名番地}"  )
+                  input(type="hidden" name="required[]" value="町名番地")
+            
+            tr.p-form__tr
+              td.p-form__term-td
+                span.p-form__term-requirement 必 須
+                span.p-form__term-title ご希望の職種
+              td.p-form__answer-td
+                div
+                  // input#personal(name='radio' type='radio' value="キャリア採用" {$checked.希望職種.キャリア採用} {$checked.default})
+                  input#radio-career(name='希望職種' type='radio' value="キャリア採用")
+                  label.radio-label(for='radio-career') キャリア採用
+                div.u-mt1
+                  // input#group(name='radio' type='radio' value="新卒採用" {$checked.希望職種.新卒採用})
+                  input#radio-new_graduate(name='希望職種' type='radio' value="新卒採用")
+                  label.radio-label(for='radio-new_graduate') 新卒採用
+
+        div.p-form__btn.u-mt7.u-sp-mt3
+          input.p-form__btn-input(type="submit" value="応募フォームへ")

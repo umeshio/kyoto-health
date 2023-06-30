@@ -1,0 +1,89 @@
+/* ****************************************************************************************************
+
+  # welfare-point
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+ul.p-welfare-point {
+	display: grid;
+	border-top: 2px dotted global.$color-blue-light;
+	grid-template-columns: 1fr;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	ul.p-welfare-point {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* ======================================================================
+
+  ## divider
+
+====================================================================== */
+li.p-welfare-point__divider {
+	display: grid;
+	grid-template-columns: 1fr 2.2fr;
+	align-items: center;
+	border-bottom: 2px dotted global.$color-blue-light;
+	padding: 1.5rem 0;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	li.p-welfare-point__divider {
+		padding: 2rem 0;
+	}
+	li.p-welfare-point__divider:nth-child(even) {
+		padding-left: 3.5rem;
+		position: relative;
+		&::before {
+			content : "" ;
+			display : block;
+			position : absolute;
+			top: 50%;
+			left: 0;
+			height: 70%;
+			width: 1px;
+			border-left: 2px dotted global.$color-blue-light;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+/* ======================================================================
+
+  ## icon
+
+====================================================================== */
+.p-welfare-point__icon {
+	padding-right: 1.3rem;
+	border-right: 2px dotted global.$color-blue-light;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-welfare-point__icon {
+		border-right: none;
+		padding-right: 2rem;
+	}
+}
+
+/* ======================================================================
+
+  ## body
+
+====================================================================== */
+.p-welfare-point__body {
+	padding-left: 1.3rem;
+}
+
+.p-welfare-point__title {
+	font-weight: bold;
+	font-size: 1.8rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-welfare-point__title {
+		font-size: 2.4rem;
+	}
+}
+
+.p-welfare-point__desc {
+
+}

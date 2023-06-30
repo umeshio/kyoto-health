@@ -1,0 +1,172 @@
+/* ****************************************************************************************************
+
+  # card
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+// ```
+// li.p-card
+//   .p-caard__head
+//     .p-caard__head-img(src="")
+//    .p-card__body
+//      .p-card__number
+//      .p-card__title
+//      .p-card__desc
+// ```
+
+
+/* ======================================================================
+
+  ## li.p-card
+
+====================================================================== */
+.p-card {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ======================================================================
+
+  ## head
+
+====================================================================== */
+.p-card__head {
+}
+
+/* ======================================================================
+
+  ## image
+
+====================================================================== */
+.p-card__head-image {
+}
+
+/* ======================================================================
+
+  ## body
+
+====================================================================== */
+.p-card__body {
+  position: relative;
+  background-color: global.$color-blue-white;
+  padding-top: 1rem;
+  padding-bottom: 1.8rem;
+  padding-right: 7%;
+  padding-left: 7%;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-card__body {
+    padding-right: 7%;
+    padding-left: 7%;
+    padding-top: 1.8rem;
+    padding-bottom: 2.2rem;
+    flex: 1;
+  }
+}
+
+.p-card__body::after {
+  content : "" ;
+  display : block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: .9rem solid global.$color-green;
+  border-bottom: .9rem solid global.$color-green;
+  border-left: .9rem solid transparent;
+  border-top: .9rem solid transparent;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-card__body::after {
+  }
+}
+
+.p-card__body.p-card__body--green {
+  background-color: global.$color-green-white;
+}
+
+/* ======================================================================
+
+  ## number
+
+====================================================================== */
+.p-card__number {
+  font-size: global.$font-size-sm;
+  line-height: 1.4;
+  font-weight: bold;
+  color: global.$color-blue;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-card__number {
+    font-size: 1.4rem;
+  }
+}
+
+.p-card__number span.strong {
+  font-size: 1.6rem;
+  margin-left: .5rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-card__number span.strong {
+    font-size: 2.2rem;
+    margin-left: .8rem;
+  }
+}
+
+/* ======================================================================
+
+  ## sub-title
+
+====================================================================== */
+.p-card__sub-title {
+  line-height: 1.5;
+  font-weight: global.$font-weight-bold;
+  margin-top: .9rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-card__sub-title 
+  {
+    margin-top: 1.1rem;
+    line-height: 1.4;
+  }
+}
+
+/* ======================================================================
+
+  ## title
+
+====================================================================== */
+.p-card__title {
+  @include global.font-size-l();
+  line-height: 1.5;
+  font-weight: global.$font-weight-bold;
+  color: global.$color-txt-dark;
+  margin-top: .9rem;
+}
+
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-card__title {
+  }
+}
+
+/* ======================================================================
+
+  ## desc
+
+====================================================================== */
+.p-card__desc {
+  line-height: 1.5;
+  margin-top: .8rem;
+  color: global.$color-txt-dark;
+}
+
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-card__desc {
+    margin-top: 1.2rem;
+  }
+}

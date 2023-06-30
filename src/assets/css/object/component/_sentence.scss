@@ -1,0 +1,46 @@
+/* ****************************************************************************************************
+
+  # sentnece
+  - component
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+$sentence-gap: 1rem;
+$sentence-gap-mq-min-md: 1.4rem;
+
+.c-sentence {
+  position: relative;
+}
+
+/* ======================================================================
+
+  ## item
+
+====================================================================== */
+.c-sentence__item {
+  & + & {
+    margin-top: $sentence-gap;
+  }
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .c-sentence__item {
+    & + & {
+      margin-top: $sentence-gap-mq-min-md;
+    }
+  }
+}
+
+
+/* ======================================================================
+  ## ページトップのc-senntence
+====================================================================== */
+.c-sentence.c-sentence--page-top {
+  margin: 0 auto 2rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .c-sentence.c-sentence--page-top {
+    margin: 0 auto 4rem;
+    max-width: 600px;
+  }
+}

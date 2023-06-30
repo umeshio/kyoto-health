@@ -1,0 +1,89 @@
+/* ****************************************************************************************************
+
+  # kv-title
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.p-kv-title {
+  position: relative;
+  z-index: 10;
+  background-color: global.$color-white;
+  width: 90%;
+  margin: -4rem auto 0;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-kv-title {
+    margin: -10rem auto 0;
+    width: 50%;
+    padding: 6rem 0;
+    min-width: 700px;
+  }
+}
+
+.p-kv-title::before {
+  content : "" ;
+  display : block;
+  position : absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 4rem solid global.$color-green;
+  border-top: 2rem solid global.$color-green;
+  border-right: 4rem solid transparent;
+  border-bottom: 2rem solid transparent;
+}
+
+.p-kv-title::after {
+  content : "" ;
+  display : block;
+  position : absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 4rem solid transparent;
+  border-top: 2rem solid transparent;
+  border-right: 4rem solid global.$color-blue;
+  border-bottom: 2rem solid global.$color-blue;
+}
+
+/* ======================================================================
+
+  ## item
+
+====================================================================== */
+.p-kv-title__item {
+  font-size: 3rem;
+  font-weight: bold;
+  color: global.$color-green;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-kv-title__item {
+    font-size: 4.2rem;
+    margin-bottom: .6rem;
+  }
+}
+
+.p-kv-title__item-sub {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: global.$color-txt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-kv-title__item-sub {
+    font-size: 2.2rem;
+    letter-spacing: 5px;
+  }
+}

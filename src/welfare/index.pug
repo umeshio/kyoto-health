@@ -1,0 +1,136 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "welfare";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "sub";
+
+block content
+
+  //- **********************************************************************
+  //- パンくずリスト
+  //- **********************************************************************
+  section.l-section.l-section--gap_0.t-bg-blue-white
+    div.l-container.l-container--bredcrumb
+      ul.p-breadcrumbs
+        li.p-breadcrumbs__divider
+          a.p-breadcrumbs__item(#href=`${relativePath}`) TOP
+        li.p-breadcrumbs__try-divider
+        li.p-breadcrumbs__divider
+          p.p-breadcrumbs__item 福利厚生
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-kv
+    div.l-kv__container
+      div.l-kv__image
+        img.js-ofi(src=`${relativePath}assets/img/kv/welfare-kv-image.webp` alt="")
+    div.p-kv-title
+      h1.p-kv-title__item Welfare
+      p.p-kv-title__item-sub 福利厚生
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- Intro
+  //- **********************************************************************
+  section.l-section
+    div.l-container
+      div.c-sentence.c-sentence--page-top
+        p.c-sentence__item 社員一人ひとりの幸福と成長を大切に考えており、充実した福利厚生を提供しています。私たちと一緒に働くことで、仕事とプライベートの充実を実現し、長く活躍できる環境を提供します。
+
+  //- **********************************************************************
+  //- welfare
+  //- **********************************************************************
+  section.l-section.l-section--gap_bottom-lg.t-border-b
+    div.l-container
+      div.p-welfare-header.c-fade-up.js-inview
+        h2.p-welfare-header__title WELFARE /
+          span.p-welfare-header__title-num 01
+          span.p-welfare-header__title-strong 多様な働き方
+        div.p-welfare-header__image-box.p-welfare-header__image-box--01
+      ul.p-welfare-point.u-mt4.u-sp-mt7
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-01.svg`, alt="テレワーク制度")
+          div.p-welfare-point__body
+            p.p-welfare-point__title テレワーク制度
+            p.p-welfare-point__desc ・在宅勤務が可能<br>・パソコン/通信機器の貸与有り
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-02.svg`, alt="再雇用制度")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 再雇用制度
+            p.p-welfare-point__desc 退職した社員を<br>再雇用する制度
+        
+      div.p-welfare-header.p-welfare-header--reverce.u-mt14.u-sp-mt5.c-fade-up.js-inview
+        h2.p-welfare-header__title WELFARE /
+          span.p-welfare-header__title-num 02
+          span.p-welfare-header__title-strong 休暇・休職
+        div.p-welfare-header__image-box.p-welfare-header__image-box--02
+      ul.p-welfare-point.u-mt4.u-sp-mt7
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-03.svg`, alt="産前産後休暇・育児休業")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 産前産後休暇・育児休業
+            p.p-welfare-point__desc ・産前42日、産後56日間の休暇<br>・出産後1歳6ヶ月までの休業
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-04.svg`, alt="介護休暇")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 介護休暇
+            p.p-welfare-point__desc 要介護状態にある家族の介護のための<br class="u-hide-mq-max-md">最長1年間の休業
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-05.svg`, alt="時短勤務制度")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 時短勤務制度
+            p.p-welfare-point__desc 介護・育児を目的とした<br>時短勤務可能
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-10.svg`, alt="リフレッシュ休暇")
+          div.p-welfare-point__body
+            p.p-welfare-point__title リフレッシュ休暇
+            p.p-welfare-point__desc 採用初年度から<br class="u-hide-mq-max-md">4日
+
+      div.p-welfare-header.u-mt14.u-sp-mt5.c-fade-up.js-inview
+        h2.p-welfare-header__title WELFARE /
+          span.p-welfare-header__title-num 03
+          span.p-welfare-header__title-strong キャリアアップ
+        div.p-welfare-header__image-box.p-welfare-header__image-box--03
+      ul.p-welfare-point.u-mt4.u-sp-mt7
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-06.svg`, alt="資格手当")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 資格手当
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-07.svg`, alt="合格報奨金")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 合格報奨金
+
+      div.p-welfare-header.p-welfare-header--reverce.u-mt14.u-sp-mt5.c-fade-up.js-inview
+        h2.p-welfare-header__title WELFARE /
+          span.p-welfare-header__title-num 04
+          span.p-welfare-header__title-strong その他制度
+        div.p-welfare-header__image-box.p-welfare-header__image-box--04
+      ul.p-welfare-point.u-mt4.u-sp-mt7
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-08.svg`, alt="確定拠出年金（401K）制度")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 確定拠出年金（401K）制度
+            p.p-welfare-point__desc 企業が資金を積み立て運用し、資産を形成していく「企業型確定拠出年金」加入中。
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-09.svg`, alt="各種社会保険")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 各種社会保険
+            p.p-welfare-point__desc 「雇用保険」、「労災保険」<br>「健康保険」、「厚生年金保険」

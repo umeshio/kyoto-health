@@ -1,0 +1,33 @@
+/* ****************************************************************************************************
+
+  # top-development
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+.p-top-development {
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-top-development {
+		display: grid;
+		grid-template-columns: 1fr 2.4fr;
+		align-items: end;
+	}
+}
+
+.p-top-development__text-area {
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-top-development__text-area {
+		padding-bottom: 5vw;
+	}
+}
+
+.p-top-development__card-area {
+	margin-top: 3rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-top-development__card-area {
+		margin-top: 0;
+	}	
+}

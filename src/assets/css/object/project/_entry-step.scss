@@ -1,0 +1,30 @@
+/* ****************************************************************************************************
+
+  # entry-step
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.p-entry-step {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 7%;
+	margin: 0 auto;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-entry-step {
+		width: 50%;
+		min-width: 750px;
+	}
+}
+
+.p-entry-step__item {
+	font-weight: bold;
+	padding-bottom: .8rem;
+	border-bottom: 2px solid global.$color-border;
+}
+
+.p-entry-step__item.current-page {
+	border-bottom: 2px solid global.$color-blue;
+}

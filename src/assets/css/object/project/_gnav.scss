@@ -1,0 +1,125 @@
+/* ****************************************************************************************************
+
+  # gnav
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.p-gnav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: (global.$header-height + 7rem) global.$content-side-gutter 5rem;
+  overflow-y: auto;
+  font-size: 1.4rem;
+  background-color: rgba($color: #fff, $alpha: .9);
+  transform: translateX(100%);
+  -webkit-overflow-scrolling: touch;
+  @include global.z-index(gnav);
+}
+
+.p-gnav.is-active {
+  animation: gnav-open .5s forwards;
+  // transition: transform 500ms cubic-bezier(.165, .84, .44, 1) 300ms;
+  // transform: translateX(0);
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-gnav {
+    width: 40%;
+    // position: relative;
+    // width: auto;
+    // padding: 0;
+    // overflow: visible;
+    // background-color: transparent;
+    // transform: translateX(0);
+  }
+}
+
+@keyframes gnav-open {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  1% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ======================================================================
+
+  ## list
+
+====================================================================== */
+.p-gnav__list {
+  display: block;
+  border-top: 1px dotted global.$color-dark;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-gnav__list {
+  }
+}
+
+/* ======================================================================
+
+  ## divider
+
+====================================================================== */
+.p-gnav__divider {
+  position: relative;
+  display: block;
+}
+
+.p-gnav__divider + .p-gnav__divider {
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-gnav__divider + .p-gnav__divider {
+  }
+}
+
+/* ======================================================================
+
+  ## item
+
+====================================================================== */
+.p-gnav__item {
+  position: relative;
+  display: block;
+  padding: .6rem 1rem .6rem 0;
+  border-bottom: 1px dotted global.$color-dark;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-gnav__item {
+    padding: 1.2rem 0;
+  }
+}
+
+/* ======================================================================
+
+  txt
+
+====================================================================== */
+span.p-gnav__item__eng {
+  color: global.$color-green;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  span.p-gnav__item__eng {
+    font-size: 2rem;
+  }
+}
+
+span.p-gnav__item__jp {
+  display: block;
+  color: global.$color-txt;
+  font-size: 1.4rem;
+}

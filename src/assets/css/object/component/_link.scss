@@ -1,0 +1,33 @@
+/* ****************************************************************************************************
+
+  # link
+  - component
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.c-link {
+	color: global.$color-txt-dark;
+	position: relative;
+	width: fit-content;
+	display: block;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.c-link {
+		margin-left: 0;
+		margin-right: 0;
+	}	
+}
+
+.c-link::after {
+		content : "" ;
+		display : inline-block;
+		width: 1.8rem;
+		height: 1.8rem;
+		background-image: url(../img/common/icon-file.svg);
+		margin-left: .8rem;
+		transform: translateY(25%);
+}

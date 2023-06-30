@@ -1,0 +1,22 @@
+/* ****************************************************************************************************
+
+  # anchor
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.p-anchor {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 3%;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-anchor {
+		column-gap: 7%;
+		width: 50%;
+		min-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

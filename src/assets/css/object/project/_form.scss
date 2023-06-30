@@ -1,0 +1,251 @@
+/* ****************************************************************************************************
+
+  # form
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+.p-form {
+	background-color: global.$color-white;
+	padding: 3rem 5vw;;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form {
+		padding: 6rem 5vw;;
+	}
+}
+
+/* ======================================================================
+
+  ## table
+
+====================================================================== */
+.p-form__table {
+}
+
+.p-form__tr {
+	display: flex;
+	flex-direction: column;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__tr {
+		flex-direction: row;
+	}
+}
+
+/* ======================================================================
+
+  ## term-td
+
+====================================================================== */
+.p-form__term-td {
+	width: 100%;
+	border-top: 2px solid global.$color-green;
+	padding: 2rem 0;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__term-td {
+		width: 25%;
+		padding: 3rem 0;
+	}
+}
+
+span.p-form__term-requirement {
+	color: global.$color-white;
+	display: inline-block;
+	background-color: #f49796;
+	padding: 0 .5rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-right: 1rem;
+}
+
+span.p-form__term-title {
+	font-weight: 500;
+}
+
+/* ======================================================================
+
+  ## answer-td
+
+====================================================================== */
+.p-form__answer-td {
+	width: 100%;
+	border-top: 2px solid global.$color-border;
+	padding: 2rem 0 2.3rem 0;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__answer-td {
+		width: 75%;
+		padding: 3rem 1.8rem;
+	}
+}
+
+.p-form__tr:last-child {
+	.p-form__answer-td {
+		border-bottom: 2px solid global.$color-green;
+	}
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__tr:last-child {
+		.p-form__answer-td {
+			border-bottom: none;
+		}
+	}
+}
+
+/* ===========================================
+  ## 名前
+============================================== */
+.p-form__answer-td.p-form__answer-td--name {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: .8rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__answer-td.p-form__answer-td--name {
+		grid-template-columns: 1fr 1fr;
+		column-gap: 5%;
+	}
+}
+
+div.p-form__answer-td__name-divider {
+	display: grid;
+	grid-template-columns: 3.5rem 1fr;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	div.p-form__answer-td__name-divider {
+		grid-template-columns: 4.5rem 1fr;
+	}
+}
+
+/* ===========================================
+  ## 住所
+============================================== */
+.p-form__answer-td.p-form__answer-td--addr {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__answer-td.p-form__answer-td--addr {
+		span.p-form__answer-td__text {
+			margin-right: 2rem;
+	}
+	}
+}
+
+.p-form__answer-td__addr-divider {
+	display: grid;
+	grid-template-columns: 25% 75%;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__answer-td__addr-divider {
+		grid-template-columns: 9rem 22rem;
+	}
+}
+
+.p-form__answer-td__addr-divider:last-of-type {
+	margin-top: .8rem;
+	display: block;
+}
+
+/* ======================================================================
+
+  ## input
+
+====================================================================== */
+input.p-form__input-text {
+	background-color: global.$color-gray-light;
+	font-size: 1.6rem;
+	padding: .6rem .3rem;
+	width: 100%;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	input.p-form__input-text {
+		font-size: 1.8rem;
+		padding: .8rem .6rem;
+	}
+}
+
+input[type='radio'] + .radio-label {
+	position: relative;
+	padding-left: 3.2rem;
+	cursor: pointer;
+	&:before {
+		transition: 0.3s;
+		content: '';
+		background: global.$color-white;
+		display: inline-block;
+		border: 1px solid global.$color-gray;
+		width: 2rem;
+		height: 2rem;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0%, -50%);
+		cursor: pointer;
+	}
+}
+
+input[type='radio']:checked + .radio-label{
+	&:before {
+		background-color: global.$color-blue;
+	}
+}
+
+/* ======================================================================
+
+  ## btn
+
+====================================================================== */
+.p-form__btn {
+	width: 100%;
+	max-width: 30rem;	
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	&::after {
+    content : "" ;
+    z-index: 1;
+    display : block;
+    position : absolute;
+		background-color: global.$color-blue;
+    width: 1rem;
+    height: 1px;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-form__btn {
+		&::after {
+			width: 2rem;
+		}
+	}
+}
+
+input.p-form__btn-input {
+	cursor: pointer;
+	display: block;
+	width: 100%;
+	background-color: #d2e8ef;
+	border: 1px solid global.$color-blue;
+	font-weight: bold;
+	color: global.$color-blue;
+	padding: .8rem .5rem;
+	position: relative;
+	transition: all .5s ease;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	input.p-form__btn-input {
+		padding: 1rem .5rem;
+	}
+}
+
+input.p-form__btn-input:hover {
+	opacity: .7;
+}

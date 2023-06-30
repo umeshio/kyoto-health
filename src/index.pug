@@ -1,0 +1,149 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "home";
+
+block content
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-home-kv
+    div.l-home-kv__container
+      div.s-home-kv-title
+        h1.s-home-kv-title__item
+          include /_includes/_svg/_kv-title
+    div.l-home-kv__image
+      picture
+        source(media='(min-width:768px)' srcset=`${relativePath}assets/img/kv/top-kv-image.webp`)
+        source(media='(min-width:350px)' srcset=`${relativePath}assets/img/kv/top-kv-image-sp.webp`)
+        img.l-home-kv__image__img(src=`${relativePath}assets/img/kv/top-kv-image.webp` alt="")
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- About us
+  //- **********************************************************************
+  section.l-section.l-section--gap_top-l.t-bg-first_section
+    div.l-container
+      h2.p-title.u-txt-align-center About us
+        span.p-title__ruby 会社概要
+      ul.c-card-grid.u-mt5.u-sp-mt3
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/about/vision-card-01.webp`, alt="健康・保健のデジタル革命")
+          a.p-card__body(href=`${relativePath}about`)
+            p.p-card__number MISSION /
+              span.strong 01
+            p.p-card__title 健康•保健のデジタル革命
+            p.p-card__desc 健康情報のデータ化により、健康・保健の分野を革新します。
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/about/vision-card-02.webp`, alt="オープンイノベーション")
+          a.p-card__body(href=`${relativePath}about`)
+            p.p-card__number MISSION /
+              span.strong 02
+            p.p-card__title オープンイノベーション
+            p.p-card__desc オープンイノベーションによる新しいサービス・プロダクトを創出します。
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/about/vision-card-03.webp`, alt="信頼される企業に")
+          a.p-card__body(href=`${relativePath}about`)
+            p.p-card__number MISSION /
+              span.strong 03
+            p.p-card__title 信頼される企業に
+            p.p-card__desc 社会的・地域的責任を果たす企業として、お客様に信頼される企業を目指します。
+      div.p-btn.p-btn--green.u-mt6.u-sp-mt3.u-w30.u-sp-w-full
+        a.p-btn__inner(href=`${relativePath}about`)
+          span.p-btn__txt 会社概要へ
+
+  //- **********************************************************************
+  //- Development
+  //- **********************************************************************
+  section.l-section.t-bg-development
+    div.l-container
+      div.p-top-development
+        div.p-top-development__text-area
+          h2.p-title Development 
+            span.p-title__ruby 開発実績
+          div.p-sentence.u-mt4.u-sp-mt2
+            p.p-sentence__item 私たちは、京都工場保健会を母体としています。これまで、健康診断や健康管理に関するさまざまな機能を提供し、効率的なデータ管理や予約管理、結果報告などを支援するシステムを開発してきました。持続的な健康管理と利便性を追求するために、さらなる技術革新と柔軟なシステム拡張を目指します。
+          div.p-btn.p-btn--green.u-mt4.u-sp-mt3.u-hide-mq-max-md
+            a.p-btn__inner(href=`${relativePath}development`)
+              span.p-btn__txt 開発実績を見る
+        div.p-top-development__card-area
+          ul.c-card-grid.c-card-grid--row
+            li.p-row-card.c-fade-up.js-inview
+                div.p-row-card__head(href=`${relativePath}development`)
+                  img.p-row-card__head-img(src=`${relativePath}assets/img/page/development/development-card-01.webp`, alt="総合健診データ管理システム")
+                a.p-row-card__body(href=`${relativePath}development`)
+                  p.p-row-card__number DEVELOPMENT /
+                    span.strong 01
+                  p.p-row-card__sub-title デジタルが生む健康管理
+                  p.p-row-card__title 総合健診データ管理システム
+            li.p-row-card.c-fade-up.js-inview
+              div.p-row-card__head
+                img.p-row-card__head-img(src=`${relativePath}assets/img/page/development/development-card-02.webp`, alt="健康診断WEB予約システム")
+              a.p-row-card__body(href=`${relativePath}development`)
+                p.p-row-card__number DEVELOPMENT /
+                  span.strong 02
+                p.p-row-card__sub-title 24時間対応を可能とする
+                p.p-row-card__title 健康診断WEB予約システム
+            li.p-row-card.c-fade-up.js-inview
+              div.p-row-card__head
+                img.p-row-card__head-img(src=`${relativePath}assets/img/page/development/development-card-03.webp`, alt="データヘルスシステム")
+              a.p-row-card__body(href=`${relativePath}development`)
+                p.p-row-card__number DEVELOPMENT /
+                  span.strong 03
+                p.p-row-card__sub-title お客様の健康を促進する
+                p.p-row-card__title データヘルスシステム
+          div.p-btn.p-btn--green.u-sp-mt3.u-hide-mq-min-md
+            a.p-btn__inner(href=`${relativePath}development`)
+              span.p-btn__txt 開発実績を見る
+      
+  //- **********************************************************************
+  //- エンジニア募集
+  //- **********************************************************************
+  section.l-section.l-section--gap_lg.t-bg-recruitment
+    div.l-container
+      h2.p-title--white 医療の未来を創る<br class="u-hide-mq-min-md">エンジニアを募集中！
+      div.c-sentence.u-txt-align-center-mq-min-md.u-mt5.u-sp-mt3
+        div.c-sentence__item 常に進化し続ける技術と創造力を持つ人材を求めています！<br>
+          |私たちと一緒に働きながら、未来の健康管理や医療の領域において<br class="u-hide-mq-max-md">
+          |革新的なシステムを開発しませんか？
+      a.p-welfare-bnr.c-fade-up.js-inview.u-mt6.u-sp-mt3(href=`${relativePath}welfare`)
+        div.p-welfare-bnr__inner
+          div.p-welfare-bnr__contents
+            h2.p-title.u-txt-align-center-mq-max-md Welfare
+              span.p-title__ruby 福利厚生
+            div.p-sentence.u-txt-align-center-mq-max-md.u-mt3.u-sp-mt1
+              p.p-sentence__item 豊富な福利厚生で、<br>
+                | 社員の幸福と成長をサポートします。
+      div.p-btn.p-btn--blue-fill.u-w30.u-sp-w-full.u-mt4.u-sp-mt3
+        a.p-btn__inner(href=`${relativePath}entry`)
+          span.p-btn__txt 応募フォームへ
+
+  //- **********************************************************************
+  //- フッターバナー
+  //- **********************************************************************
+  .l-section.l-section--gap_0
+    div.l-container.l-container--full
+      ul.p-footer-bnr
+        li.p-footer-bnr__divider
+          a.p-footer-bnr__item.p-footer-bnr__item-recruitment(href=`${relativePath}recruitment`)
+            h2.p-title.u-txt-align-center Recritment
+              span.p-title__ruby 募集要項
+        li.p-footer-bnr__divider
+          a.p-footer-bnr__item.p-footer-bnr__item-welfare(href=`${relativePath}welfare`)
+            h2.p-title.u-txt-align-center Welfare
+              span.p-title__ruby 募集要項
+        li.p-footer-bnr__divider
+          a.p-footer-bnr__item.p-footer-bnr__item-entry(href=`${relativePath}entry`)
+            h2.p-title.u-txt-align-center Entry
+              span.p-title__ruby 応募フォーム

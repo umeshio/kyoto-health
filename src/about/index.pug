@@ -1,0 +1,150 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "About";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "sub";
+
+block content
+
+  //- **********************************************************************
+  //- パンくずリスト
+  //- **********************************************************************
+  section.l-section.l-section--gap_0.t-bg-blue-white
+    div.l-container.l-container--bredcrumb
+      ul.p-breadcrumbs
+        li.p-breadcrumbs__divider
+          a.p-breadcrumbs__item(href=`${relativePath}`) TOP
+        li.p-breadcrumbs__try-divider
+        li.p-breadcrumbs__divider
+          p.p-breadcrumbs__item 会社概要
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-kv
+    div.l-kv__container
+      div.l-kv__image
+        img.js-ofi(src=`${relativePath}assets/img/kv/about-kv-image.webp` alt="")
+    div.p-kv-title
+      h1.p-kv-title__item About us
+      p.p-kv-title__item-sub 会社概要
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- Intro & Visiton・Mission
+  //- **********************************************************************
+  section.l-section.l-section--gap_bottom-lg
+    div.l-container
+      div.c-sentence.c-sentence--page-top
+        p.c-sentence__item 京都ヘルスケアＩＴは、一般財団法人京都工場保健会１００％出資の子会社です。<br>
+          | 一般財団法人京都工場保健会の事業に貢献するために、保健・健康事業とＩＴを融合出来るノウハウと組織力を生かし、プロセスの改善及び新しい保健・健康サービスの創造に取り組みます。
+
+      h2.p-title.u-txt-align-center.u-mt10.u-sp-mt6 vision・mission
+        span.p-title__ruby ビジョン・ミッション
+      ul.c-card-grid.u-mt5.u-sp-mt3
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/about/vision-card-01.webp`, alt="健康・保健のデジタル革命")
+          div.p-card__body
+            p.p-card__number MISSION /&nbsp;
+              span.strong &nbsp;01
+            p.p-card__title 健康•保健のデジタル革命
+            p.p-card__desc 健康情報のデータ化により、健康・保健の分野を革新します。
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/about/vision-card-02.webp`, alt="オープンイノベーション")
+          div.p-card__body
+            p.p-card__number MISSION /&nbsp;
+              span.strong &nbsp;02
+            p.p-card__title オープンイノベーション
+            p.p-card__desc オープンイノベーションによる新しいサービス・プロダクトを創出します。
+        li.p-card.c-fade-up.js-inview
+          div.p-card__head
+            img.p-card__head-img(src=`${relativePath}assets/img/page/about/vision-card-03.webp`, alt="信頼される企業に")
+          div.p-card__body
+            p.p-card__number MISSION /&nbsp;
+              span.strong &nbsp;03
+            p.p-card__title 信頼される企業に
+            p.p-card__desc 社会的・地域的責任を果たす企業として、お客様に信頼される企業を目指します。
+      
+  //- **********************************************************************
+  //- Message
+  //- **********************************************************************
+  section.l-section.t-bg-green-white
+    div.l-container
+      h2.p-title.u-txt-align-center Message
+        span.p-title__ruby 社長の挨拶
+      div.c-grid.c-grid--1-2.u-mt5.u-sp-mt3
+        div.u-w-full
+          img.u-w-full(src=`https://placehold.jp/333x444.png`, alt="村山 勝")
+        div.u-pl4.u-pr2.u-sp-pr0.u-sp-pl0
+          p.u-txt-size-l.u-txt-bold 社長の挨拶
+          div.c-sentence.u-mt2.u-sp-mt1
+            p.c-sentence__item 当社は、労動衛生機関である一般財団法人京都工場保健会の情報技術部門を分社化して情報システム子会社として2023年4月に誕生し、京都工場保健会の情報技術部門としての役割を担って行く予定です。
+            p.c-sentence__item 国が推進するＤＸ化が加速する中で、当社が京都工場保健会の事業において果たすべき役割は、大きくなって行くと認識しております。また健康情報の利活用に関する対応にも柔軟に対応する能力が求められています。
+            p.c-sentence__item そのような中、当社はいままで京都工場保健会の中で、培った健康管理に関する技術・ノウハウを用いて、サイバー攻撃など社会インフラの急激なデジタル化に伴う新しいリスクに対応しながら、新しいＩＴ技術の利活用により生産性を生み出す新しいサービス等の実現を通して、京都工場保健会の各事業の要望に応えて行きたいと考えています。
+            p.c-sentence__item 当社の使命は、スピーディにＡＩやクラウド等の先端技術を活用した新領域にも果敢に取り組んで行く事です。そのために、新たにプロフェッショナルな人材を含めた人材採用強化と教育を通じて、期待に応えられるように体制強化を図って行きます。
+            p.c-sentence__item 役職員一同、京都工場保健会の事業に貢献出来るように最大限努力し、当社をさらに成長させていく所存ですので、どうぞ今後共、ご指導ご鞭撻の程宜しくお願い致します。
+
+        p.c-president-name.c-grid__col-2.u-txt-align-right.u-mt1 代表取締役社長
+          img.c-president-name__img(src=`${relativePath}assets/img/common/president-name.svg`, alt="村山 勝")
+
+  //- **********************************************************************
+  //- Summary
+  //- **********************************************************************
+  section.l-section.l-section--gap_top-l
+    div.l-container
+      div.c-grid.c-grid--1-2
+        h2.p-title Summary
+          span.p-title__ruby 概要
+        dl.p-dl-list
+          dt.p-dl-list__dt 会社名
+          dd.p-dl-list__dd 株式会社 京都ヘルスケアＩＴ
+          dt.p-dl-list__dt 代表者
+          dd.p-dl-list__dd 代表取締役社長  村山 勝
+          dt.p-dl-list__dt 主なサービス
+          dd.p-dl-list__dd 健康・保健及び福祉に関するシステムの企画、開発、販売及び保守<br>
+            | これらに付帯又は関連する一切の事業
+          dt.p-dl-list__dt サービス内容
+          dd.p-dl-list__dd
+            ul.c-list
+              li.c-list__item ・一般財団法人 京都工場保健会のシステム開発
+              li.c-list__item ・一般社団法人 全国健康増進協議会のシステム開発
+              li.c-list__item ・関係する健診機関のシステム開発
+              li.c-list__item ・システム開発のサポート
+              li.c-list__item ・新規システムの開発・販売・サポート
+
+  //- **********************************************************************
+  //- Place
+  //- **********************************************************************
+  section.l-section
+    div.l-container.l-container--full
+      h2.p-title.u-txt-align-center Place
+        span.p-title__ruby 拠点
+      ul.p-place.u-mt3
+        li.p-place__item
+          div.p-place__header
+            img.p-place__header-img(src=`${relativePath}assets/img/page/about/place-card-01.webp` alt="本社")
+          div.p-place__body
+            p.p-place__name 本社
+            p.p-place__addr 〒604-8472M<br>京都市中京区西ノ京<br>北壺井町67番地
+        li.p-place__item
+          div.p-place__header
+            img.p-place__header-img(src=`${relativePath}assets/img/page/about/place-card-02.webp` alt="宇治")
+          div.p-place__body
+            p.p-place__name 宇治
+            p.p-place__addr 〒611-0031<br>京都府宇治市広野町成田1番地7<br>一般財団法人京都工場保健会4階
+            a.p-place__tell(href="tel:0774-29-9121") 0774-29-9121
+            p.p-place__fax （FAX：0774-44-0100）
+        li.p-place__item
+          div.p-place__header
+            img.p-place__header-img(src=`${relativePath}assets/img/page/about/place-card-03.webp` alt="本社西事務所")
+          div.p-place__body
+            p.p-place__name 本社西事務所
+            p.p-place__addr 〒604-8474<br>京都市中京区西ノ京塚本町11番地<br>一般財団法人<br>京都工場保健会西事務所2階

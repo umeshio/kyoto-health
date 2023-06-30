@@ -1,0 +1,68 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "entry_confirm";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "sub";
+
+block content
+
+  //- **********************************************************************
+  //- パンくずリスト
+  //- **********************************************************************
+  section.l-section.l-section--gap_0.t-bg-blue-white
+    div.l-container.l-container--bredcrumb
+      ul.p-breadcrumbs
+        li.p-breadcrumbs__divider
+          a.p-breadcrumbs__item(href=`${relativePath}`) TOP
+        li.p-breadcrumbs__try-divider
+        li.p-breadcrumbs__divider
+          p.p-breadcrumbs__item 応募フォーム
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-kv.t-bg-gray-light.u-pt6.u-sp-pt2
+    div.p-kv-title.u-mt0
+      h1.p-kv-title__item Entry
+      p.p-kv-title__item-sub 募集フォーム
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- Form
+  //- **********************************************************************
+  section.l-section.t-bg-gray-light
+    div.l-container
+      ul.p-entry-step
+        li.p-entry-step__item ご入力
+        li.p-entry-step__item.current-page ご確認
+        li.p-entry-step__item 送信完了
+
+      div.p-form.u-mt5.u-sp-mt3
+        h2.p-recruitment-inner__title ENTRY FORM / 
+          span.p-recruitment-inner__title-strong 応募フォーム
+
+        table.p-form__table.u-mt5.u-sp-mt3
+          //{loop:$params}
+          tr.p-form__tr
+            td.p-form__term-td
+              p.p-form__term-title {$params[].key}
+            td.p-form__answer-td
+              p {$params[].value.nl2br}
+          //{/loop:$params}
+
+      div.p-form__btn.u-mt7.u-sp-mt3
+        form(method="post" action="index.php")
+          // {$hiddens}
+          input.p-form__btn-input(value="送信する" type="submit")
+          input(type="hidden" name="page_name" value="finish")
+      div.p-form__btn.u-mt2
+        form(method="post" action="index.php")
+          // {$hiddens}
+          input.p-form__btn-input(value="戻る" type="submit")
+          input(type="hidden" name="page_name" value="input")

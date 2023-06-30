@@ -1,0 +1,56 @@
+/* ****************************************************************************************************
+
+  # welfare-btn
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+.p-welfare-bnr {
+	display: block;
+	background: global.$color-gradation;
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem;
+	cursor: pointer;
+}
+
+div.p-welfare-bnr__inner {
+	background-image: url(../img/page/top/welfare-banner-sp.webp);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: bottom 0 right 27%;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	div.p-welfare-bnr__inner {
+		background-image: url(../img/page/top/welfare-banner.webp);
+		background-size: 100% auto;
+		background-position: center left;
+	}
+}
+
+.p-welfare-bnr__contents {
+	padding: 2rem 0 19rem 0;
+	color: global.$color-txt-dark;
+	background: transparent;
+	position: relative;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-welfare-bnr__contents {
+		padding: 8rem 0 8rem 6vw;
+	}
+}
+
+.p-welfare-bnr__contents::after {
+	content : "" ;
+  display : block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: .9rem solid global.$color-blue;
+  border-bottom: .9rem solid global.$color-blue;
+  border-left: .9rem solid transparent;
+  border-top: .9rem solid transparent;
+}

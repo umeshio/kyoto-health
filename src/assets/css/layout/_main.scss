@@ -1,0 +1,25 @@
+/* ****************************************************************************************************
+
+  # main
+  - layout
+
+**************************************************************************************************** */
+@use '../foundation/tool/global';
+
+.l-main {
+  position: relative;
+  background-color: transparent;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-main {
+  }
+}
+
+.l-main.l-main--type_subpage {
+  padding: global.$header-height 0 0;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .l-main.l-main--type_subpage {
+    padding-top: global.$header-height-mq-min-md;
+  }
+}

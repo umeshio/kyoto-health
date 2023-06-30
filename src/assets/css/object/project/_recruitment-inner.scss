@@ -1,0 +1,51 @@
+/* ****************************************************************************************************
+
+  # recruitment-inner
+  - project
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+.p-recruitment-inner {
+	position: relative;
+	z-index: 1;
+	width: 90%;
+	margin-top: -6rem;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: global.$color-white;
+	padding: 3rem 5vw;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	.p-recruitment-inner {
+		max-width: 1100px;
+		margin-top: -10vw;
+		padding: 6rem 5vw;
+	}
+}
+
+/* ======================================================================
+
+  ## title
+
+====================================================================== */
+.p-recruitment-inner__title {
+	color: global.$color-blue;
+	font-size: 1.4rem;
+}
+
+span.p-recruitment-inner__title-num {
+	font-size: 2.2rem;
+}
+
+span.p-recruitment-inner__title-strong {
+	color: global.$color-txt-dark;
+	display: block;
+	font-size: 2rem;
+	margin-top: .5rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+	span.p-recruitment-inner__title-strong {
+		margin-top: 1rem;
+		font-size: 2.4rem;
+	}
+}

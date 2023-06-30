@@ -1,0 +1,41 @@
+/* ****************************************************************************************************
+
+  # width
+  - utility
+
+**************************************************************************************************** */
+@use '../../foundation/tool/global';
+
+@for $i from 0 through 30 {
+  .u-w#{$i} {
+    width: 1rem * $i !important;
+  }
+}
+
+.u-w-full {
+  width: 100% !important;
+}
+
+.u-w-half {
+  width: 50% !important;
+}
+
+.u-w-one-third {
+  width: 33.333% !important;
+}
+
+@for $i from 0 through 20 {
+  @media print, screen and (max-width: global.$breakpoint-min-md) {
+    .u-sp-w#{$i} {
+      width: 1rem * $i !important;
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  @media print, screen and (max-width: global.$breakpoint-min-md) {
+    .u-sp-w-full {
+      width: 100% !important;
+    }
+  }
+}

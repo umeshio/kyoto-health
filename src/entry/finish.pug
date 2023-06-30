@@ -1,0 +1,56 @@
+extend /_includes/_layout
+append variables
+  - var pageTitle = "entry_finish";
+  - var pageDescription = site.description;
+  - var pageKeywords = site.keywords;
+  - var pageOgpTitle = "";
+  - var pageOgpImage = site.ogpImage
+  - var pageLang = "ja";
+  - var pageOgpType = "website";
+  - var pageUrl = absolutePath;
+  - var pagePrefix = "sub";
+
+block content
+
+  //- **********************************************************************
+  //- パンくずリスト
+  //- **********************************************************************
+  section.l-section.l-section--gap_0.t-bg-blue-white
+    div.l-container.l-container--bredcrumb
+      ul.p-breadcrumbs
+        li.p-breadcrumbs__divider
+          a.p-breadcrumbs__item(href=`${relativePath}`) TOP
+        li.p-breadcrumbs__try-divider
+        li.p-breadcrumbs__divider
+          p.p-breadcrumbs__item 応募フォーム
+
+  //- **********************************************************************
+  //- キービジュアル
+  //- **********************************************************************
+  div.l-kv.t-bg-gray-light.u-pt6.u-sp-pt2
+    div.p-kv-title.u-mt0
+      h1.p-kv-title__item Entry
+      p.p-kv-title__item-sub 募集フォーム
+
+  div#js-header-trg
+  //- **********************************************************************
+  //- Form
+  //- **********************************************************************
+  section.l-section.t-bg-gray-light
+    div.l-container
+      ul.p-entry-step
+        li.p-entry-step__item ご入力
+        li.p-entry-step__item ご確認
+        li.p-entry-step__item.current-page 送信完了
+
+      form(method="post" enctype="multipart/form-data")
+        input(type="hidden" name="csrf_token" value="{$csrf_token}" )
+
+        div.p-form.u-mt5.u-sp-mt3
+          h2.u-txt-align-center エントリーが完了しました。
+          p.u-txt-align-center.u-mt2 ご応募ありがとうございます。<br>
+            | 追って担当者よりご連絡差し上げます。 
+          
+          div.p-btn.p-btn--light-blue.u-w30.u-sp-w-full.u-mt4.u-sp-mt3
+            a.p-btn__inner(href=`${relativePath}`)
+              span.p-btn__txt TOPへ
