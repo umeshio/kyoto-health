@@ -99,6 +99,12 @@
   max-width: 100%;
   color: global.$color-white;
   text-align: center;
+  font-size: 1.2rem;
+}
+@media print, screen and (min-width: global.$breakpoint-min-md) {
+  .p-btn__txt {
+    font-size: 1.5rem;
+  }
 }
 
 .p-btn.p-btn--light-blue {

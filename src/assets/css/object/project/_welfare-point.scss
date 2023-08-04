@@ -14,6 +14,9 @@ ul.p-welfare-point {
 	ul.p-welfare-point {
 		grid-template-columns: 1fr 1fr;
 	}
+	ul.p-welfare-point.p-welfare-point--3col {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }
 
 /* ======================================================================
@@ -31,10 +34,10 @@ li.p-welfare-point__divider {
 @media print, screen and (min-width: global.$breakpoint-min-md) {
 	li.p-welfare-point__divider {
 		padding: 2rem 0;
+		position: relative;
 	}
 	li.p-welfare-point__divider:nth-child(even) {
 		padding-left: 3.5rem;
-		position: relative;
 		&::before {
 			content : "" ;
 			display : block;
@@ -47,6 +50,26 @@ li.p-welfare-point__divider {
 			transform: translateY(-50%);
 		}
 	}
+
+	ul.p-welfare-point.p-welfare-point--3col {
+			li.p-welfare-point__divider {
+				grid-template-columns: 1fr;
+				padding-left: 0;
+			}
+			li.p-welfare-point__divider + li.p-welfare-point__divider {
+				&::before {
+				content : "" ;
+				display : block;
+				position : absolute;
+				top: 50%;
+				left: 0;
+				height: 70%;
+				width: 1px;
+				border-left: 2px dotted global.$color-blue-light;
+				transform: translateY(-50%);
+		}
+			}
+		}
 }
 
 /* ======================================================================
@@ -63,6 +86,13 @@ li.p-welfare-point__divider {
 		border-right: none;
 		padding-right: 2rem;
 	}
+	ul.p-welfare-point.p-welfare-point--3col {
+			.p-welfare-point__icon {
+				width: 50%;
+				margin: 0 auto;
+				padding-right: 0;
+			}
+		}
 }
 
 /* ======================================================================
@@ -72,6 +102,7 @@ li.p-welfare-point__divider {
 ====================================================================== */
 .p-welfare-point__body {
 	padding-left: 1.3rem;
+	padding-right: .4rem;
 }
 
 .p-welfare-point__title {
@@ -82,8 +113,24 @@ li.p-welfare-point__divider {
 	.p-welfare-point__title {
 		font-size: 2.4rem;
 	}
+
+	ul.p-welfare-point.p-welfare-point--3col {
+		.p-welfare-point__body {
+			padding-left: 0rem;
+			padding-right: 0rem;
+		}
+			.p-welfare-point__title {
+				width: fit-content;
+				margin: .8rem auto 0;
+			}
+			.p-welfare-point__desc {
+				width: fit-content;
+				margin: 0 auto;
+			}
+		}
 }
 
-.p-welfare-point__desc {
-
+.p-welfare-point__desc.p-welfare-point__desc--indent {
+	text-indent: -1.6rem;
+	padding-left: 1.6rem;
 }

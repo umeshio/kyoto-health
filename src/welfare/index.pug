@@ -19,7 +19,7 @@ block content
     div.l-container.l-container--bredcrumb
       ul.p-breadcrumbs
         li.p-breadcrumbs__divider
-          a.p-breadcrumbs__item(#href=`${relativePath}`) TOP
+          a.p-breadcrumbs__item(href=`${relativePath}`) TOP
         li.p-breadcrumbs__try-divider
         li.p-breadcrumbs__divider
           p.p-breadcrumbs__item 福利厚生
@@ -54,7 +54,7 @@ block content
           span.p-welfare-header__title-num 01
           span.p-welfare-header__title-strong 多様な働き方
         div.p-welfare-header__image-box.p-welfare-header__image-box--01
-      ul.p-welfare-point.u-mt4.u-sp-mt7
+      ul.p-welfare-point.p-welfare-point--3col.u-mt4.u-sp-mt7
         li.p-welfare-point__divider
           div.p-welfare-point__icon
             img(src=`${relativePath}assets/img/page/welfare/welfare-illust-01.svg`, alt="テレワーク制度")
@@ -67,6 +67,12 @@ block content
           div.p-welfare-point__body
             p.p-welfare-point__title 再雇用制度
             p.p-welfare-point__desc 退職した社員を<br>再雇用する制度
+        li.p-welfare-point__divider
+          div.p-welfare-point__icon
+            img(src=`${relativePath}assets/img/page/welfare/welfare-illust-025.svg`, alt="再雇用制度")
+          div.p-welfare-point__body
+            p.p-welfare-point__title 育児短時間勤務制度
+            p.p-welfare-point__desc 最長 子供が１０歳になるまで<br>時短勤務可能！
         
       div.p-welfare-header.p-welfare-header--reverce.u-mt14.u-sp-mt5.c-fade-up.js-inview
         h2.p-welfare-header__title WELFARE /
@@ -78,8 +84,9 @@ block content
           div.p-welfare-point__icon
             img(src=`${relativePath}assets/img/page/welfare/welfare-illust-03.svg`, alt="産前産後休暇・育児休業")
           div.p-welfare-point__body
-            p.p-welfare-point__title 産前産後休暇・育児休業
-            p.p-welfare-point__desc ・産前42日、産後56日間の休暇<br>・出産後1歳6ヶ月までの休業
+            p.p-welfare-point__title 育児休業制度
+            p.p-welfare-point__desc.p-welfare-point__desc--indent ・出産後、最長2年までの休業制度あり
+            p.p-welfare-point__desc.p-welfare-point__desc--indent ・男性の育児休業取得を推進
         li.p-welfare-point__divider
           div.p-welfare-point__icon
             img(src=`${relativePath}assets/img/page/welfare/welfare-illust-04.svg`, alt="介護休暇")
@@ -96,8 +103,9 @@ block content
           div.p-welfare-point__icon
             img(src=`${relativePath}assets/img/page/welfare/welfare-illust-10.svg`, alt="リフレッシュ休暇")
           div.p-welfare-point__body
-            p.p-welfare-point__title リフレッシュ休暇
-            p.p-welfare-point__desc 採用初年度から<br class="u-hide-mq-max-md">4日
+            p.p-welfare-point__title 多様な休暇制度
+            p.p-welfare-point__desc.p-welfare-point__desc--indent ・採用初年度から法定の有休に加えて最大で年間11日の有給休暇を支給
+            p.p-welfare-point__desc.p-welfare-point__desc--indent ・1時間単位での休暇取得も可能
 
       div.p-welfare-header.u-mt14.u-sp-mt5.c-fade-up.js-inview
         h2.p-welfare-header__title WELFARE /
@@ -127,7 +135,7 @@ block content
             img(src=`${relativePath}assets/img/page/welfare/welfare-illust-08.svg`, alt="確定拠出年金（401K）制度")
           div.p-welfare-point__body
             p.p-welfare-point__title 確定拠出年金（401K）制度
-            p.p-welfare-point__desc 企業が資金を積み立て運用し、資産を形成していく「企業型確定拠出年金」加入中。
+            p.p-welfare-point__desc 企業と個人が資金を積み立て運用し、資産を形成していく「企業型確定拠出年金」に加入予定です。
         li.p-welfare-point__divider
           div.p-welfare-point__icon
             img(src=`${relativePath}assets/img/page/welfare/welfare-illust-09.svg`, alt="各種社会保険")
